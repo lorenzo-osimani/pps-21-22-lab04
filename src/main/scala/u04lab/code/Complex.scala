@@ -16,9 +16,9 @@ object Complex:
 @main def checkComplex(): Unit =
   val a = Array(Complex(10, 20), Complex(1, 1), Complex(7, 0))
   val c = a(0) + a(1) + a(2)
-  println((c, c == ComplexImpl(18.0,21.0), c.re, c.im)) // (ComplexImpl(18.0,21.0),18.0,21.0)
+  println((c, c == Complex(18.0,21.0), c.re, c.im)) // (ComplexImpl(18.0,21.0),18.0,21.0)
   val c2 = a(0) * a(1)
-  println((c2.toString,  c2 == ComplexImpl(-10.0,30.0),  c2.re, c2.im)) // (ComplexImpl(-10.0,30.0),-10.0,30.0)
+  println((c2.toString,  c2 == Complex(-10.0,30.0),  c2.re, c2.im)) // (ComplexImpl(-10.0,30.0),-10.0,30.0)
 
 /** Hints:
   *   - implement Complex with a ComplexImpl class, similar to PersonImpl in slides
