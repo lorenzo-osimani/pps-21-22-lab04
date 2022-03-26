@@ -11,7 +11,7 @@ class LogicsImpl(private val gridSize: Int, private val boatSize: Int) extends L
   private val FAILURES = 5
   private val r = new Random()
 
-  private var hit: List[Tuple] = List.Nil()
+  private var hit: List[Tuple] = Nil()
   private val boatRow = r.nextInt(gridSize)
   private val boatLeftCol = r.nextInt(gridSize - boatSize + 1)
   private var failures = 0
@@ -20,7 +20,7 @@ class LogicsImpl(private val gridSize: Int, private val boatSize: Int) extends L
 
   def hit(row: Int, col: Int): Logics.Result =
     if (row == this.boatRow && col >= this.boatLeftCol && col < this.boatLeftCol + boatSize) {
-      this.hit = List.append(Cons((row, col), Nil()), this.hit)
+      this.hit = Cons((row, col), this.hit)
       return if (List.length(this.hit) == this.boatSize) Result.WON
       else Result.HIT
     }
